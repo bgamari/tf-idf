@@ -12,4 +12,4 @@ corpus =
     , ["world", "T", "thing", "cord"]
     ]
     
-main = print $ search corpus "T"
+main = print $ search LinearScaling corpus "T"
