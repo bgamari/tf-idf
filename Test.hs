@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 
 import Data.List
-import TFIDF
+import Math.InfoRetrieval.TFIDF
        
 corpus =
     foldl' (\c (d,t)->addDocument d t c) emptyCorpus

@@ -1,15 +1,16 @@
 {-# LANGUAGE TemplateHaskell, GeneralizedNewtypeDeriving #-}
 
-module TFIDF ( Document(..)
-             , Term(..)
-             , Corpus
-             , emptyCorpus
-             , addDocument
-             , removeDocument
-             , FreqScaling(..)
-             , tfidf
-             , search
-             ) where            
+module Math.InfoRetrieval.TFIDF
+    ( Document(..)
+    , Term(..)
+    , Corpus
+    , emptyCorpus
+    , addDocument
+    , removeDocument
+    , FreqScaling(..)
+    , tfidf
+    , search
+    ) where            
 
 import           Control.Lens
 import           Data.Function (on)
