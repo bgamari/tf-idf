@@ -11,7 +11,6 @@ module TFIDF ( Document(..)
              , search
              ) where            
 
-import Debug.Trace       
 import           Control.Lens
 import           Data.Function (on)
 import           Data.HashMap.Strict (HashMap)
@@ -66,8 +65,6 @@ tf LinearScaling c t d =
     realToFrac $ M.lookupDefault 0 d $ M.lookupDefault M.empty t (c^.cTerms)
 tf LogScaling c t d = log $ tf LinearScaling c t d
 tf BoolScaling c t d = if tf LinearScaling c t d > 0 then 1 else 0
-
-tr s x = traceShow (s,x) x
 
 tfidf :: FreqScaling -> Corpus -> Term -> Document -> Score
 tfidf scaling c t d = tf scaling c t d * idf c t
